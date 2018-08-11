@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
-from .serializers import CandidateSerializer, PartySerializer, CauseSerializer 
-from .models import Candidate, Party, Cause 
+from candidates.models import Candidate, Party, Role, Picture, Cause
+from candidates.serializers import CandidateSerializer, PartySerializer, RoleSerializer, PictureSerializer, CauseSerializer
 
 
 class CandidateViewSet(viewsets.ModelViewSet):
@@ -17,3 +17,13 @@ class PartyViewSet(viewsets.ModelViewSet):
 class CauseViewSet(viewsets.ModelViewSet):
     queryset = Cause.objects.all()
     serializer_class = CauseSerializer
+
+
+class RoleViewSet(viewsets.ModelViewSet):
+    queryset = Role.objects.all()
+    serializer_class = RoleSerializer
+
+
+class PictureViewSet(viewsets.ModelViewSet):
+    queryset = Picture.objects.all()
+    serializer_class = PictureSerializer
