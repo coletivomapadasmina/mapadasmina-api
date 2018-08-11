@@ -22,9 +22,9 @@ class Role(models.Model):
     id=models.AutoField(primary_key=True)
     name=models.TextField()
 
-class Picture(models.Model)
+class Picture(models.Model):
     id=models.IntegerField(primary_key=True)
-    url=models.TextField() """
+    url=models.TextField()
 
 
 class Party(models.Model):

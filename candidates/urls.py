@@ -23,6 +23,5 @@ router.register(r'parties', views.PartyViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
-    url(r'^candidates/$', views.candidate_list),
-    url(r'^candidates/(?P<pk>[0-9]+)/$', views.candidate_detail),
-]
+    url(r'^candidates/$', views.CandidateList.as_view()),
+    url(r'^candidates/(?P<pk>[0-9]+)/$', views.CandidateDetail.as_view()),]
