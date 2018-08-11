@@ -7,3 +7,6 @@ up:
 
 run:
 	pipenv run python manage.py runserver 0.0.0.0:8000
+
+test:
+	pipenv run py.test
