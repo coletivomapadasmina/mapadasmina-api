@@ -12,11 +12,11 @@ class Candidate(models.Model):
     facebookURL=models.URLField()
     campaignUrl=models.URLField()
     supportUrl=models.URLField()
-    age=models.PositiveIntegerField()
-    #role=models.ForeignKey('Role', on_delete=models.CASCADE)
+    age=models.PositiveIntegerField()    
     electedBefore=models.BooleanField(default=False)
-    #party=models.ForeignKey('Party',on_delete=models.CASCADE)
-    #picture=models.ForeignKey('Picture',on_delete=models.CASCADE)
+    role=models.ForeignKey('Role', on_delete=models.CASCADE)
+    party=models.ForeignKey('Party',on_delete=models.CASCADE)
+    picture=models.ForeignKey('Picture',on_delete=models.CASCADE)
 
 class Role(models.Model):
     id=models.AutoField(primary_key=True)
@@ -25,7 +25,6 @@ class Role(models.Model):
 class Picture(models.Model):
     id=models.IntegerField(primary_key=True)
     url=models.TextField()
-
 
 class Party(models.Model):
     id=models.IntegerField(primary_key=True)
