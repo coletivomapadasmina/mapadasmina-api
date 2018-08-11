@@ -4,7 +4,7 @@ from candidates.models import Candidate, Party, Role, Picture
 class CandidateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Candidate
-        fields = ('name', 'slug','number', 'bio','instagram','latitude', 'longitude','facebookURL',
+        fields = ('name', 'slug','number', 'bio','instagram','latitude', 'longitude','facebookUrl',
         'campaignUrl','supportUrl','age','electedBefore','role','party','picture')
 
 class RoleSerializer(serializers.ModelSerializer):

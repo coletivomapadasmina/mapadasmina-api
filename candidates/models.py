@@ -5,6 +5,10 @@ class Party(models.Model):
     name=models.TextField()
     number=models.IntegerField()
 
+class Picture(models.Model):
+    id=models.IntegerField(primary_key=True)
+    url=models.TextField()
+
 class Candidate(models.Model):
     id=models.AutoField(primary_key=True)
     name=models.TextField()
@@ -21,12 +25,8 @@ class Candidate(models.Model):
     electedBefore=models.BooleanField(default=False)
     role=models.ForeignKey('Role', on_delete=models.CASCADE)
     party=models.ForeignKey('Party',on_delete=models.CASCADE)
-    picture=models.ForeignKey('Picture',on_delete=models.CASCADE)
+    picture=models.OneToOneField(Picture,on_delete=models.CASCADE)
 
 class Role(models.Model):
     id=models.AutoField(primary_key=True)
     name=models.TextField()
-
-class Picture(models.Model):
-    id=models.IntegerField(primary_key=True)
-    url=models.TextField()
