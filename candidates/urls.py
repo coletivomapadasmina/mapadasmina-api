@@ -1,4 +1,5 @@
 from django.conf.urls import url, include
+from django.contrib import admin
 from rest_framework import routers
 from rest_framework.urlpatterns import format_suffix_patterns
 from candidates import views
@@ -13,6 +14,9 @@ router.register(r'candidates', views.CandidateViewSet)
 router.register(r'causes', views.CauseViewSet)
 
 
+from django.contrib import admin
+
 urlpatterns = [
+    url(r'^admin/', admin.site.urls),
     url(r'^', include(router.urls)),
 ]
