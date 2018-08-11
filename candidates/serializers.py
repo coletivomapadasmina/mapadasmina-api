@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from candidates.models import Candidate
+from candidates.models import Candidate, Party
 
 class CandidateSerializer(serializers.ModelSerializer):
     class Meta:
@@ -21,3 +21,9 @@ class PartySerializer(serializers.ModelSerializer):
     class Meta:
         model = Picture
         fields = ('id', 'name') """
+    
+    
+class PartySerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Party
+        fields = ('id', 'name', 'number')

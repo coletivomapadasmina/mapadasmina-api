@@ -18,14 +18,16 @@ class Candidate(models.Model):
     #party=models.ForeignKey('Party',on_delete=models.CASCADE)
     #picture=models.ForeignKey('Picture',on_delete=models.CASCADE)
 
-""" class Role(models.Model):
+class Role(models.Model):
     id=models.AutoField(primary_key=True)
     name=models.TextField()
 
-class Picture(models.Model):
-    id=models.AutoField(primary_key=True)
-    url=models.URLField()
+class Picture(models.Model)
+    id=models.IntegerField(primary_key=True)
+    url=models.TextField() """
+
 
 class Party(models.Model):
-    id=models.AutoField(primary_key=True)
-    name=models.TextField() """
+    id=models.IntegerField(primary_key=True)
+    name=models.TextField()
+    number=models.IntegerField()
