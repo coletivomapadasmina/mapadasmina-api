@@ -17,7 +17,7 @@ class Candidate(models.Model):
     facebookUrl=models.URLField()
     campaignUrl=models.URLField()
     supportUrl=models.URLField()
-    age=models.PositiveIntegerField()    
+    age=models.PositiveIntegerField()
     electedBefore=models.BooleanField(default=False)
     role=models.ForeignKey('Role', on_delete=models.CASCADE)
     party=models.ForeignKey('Party',on_delete=models.CASCADE)
@@ -41,3 +41,8 @@ class Cause(models.Model):
     id=models.AutoField(primary_key=True)
     title=models.TextField(unique=True)
     description=models.TextField()
+
+
+class GenderIdentity(models.Model):
+    id=models.AutoField(primary_key=True)
+    name=models.TextField()
