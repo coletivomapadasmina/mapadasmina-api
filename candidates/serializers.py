@@ -6,7 +6,7 @@ from candidates.models import Candidate, Party, Role, Picture, Cause
 class CandidateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Candidate
-        fields = ('name', 'slug','number', 'bio','instagram','latitude', 'longitude','facebookURL',
+        fields = ('name', 'slug','number', 'bio','instagram','latitude', 'longitude','facebookUrl',
         'campaignUrl','supportUrl','age','electedBefore','role','party','picture')
 
 
@@ -20,17 +20,16 @@ class PartySerializer(serializers.HyperlinkedModelSerializer):
 class RoleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Role
-        fields = ('role_id', 'name')
+        fields = ('id', 'name')
 
 
 class PictureSerializer(serializers.ModelSerializer):
     class Meta:
         model = Picture
-        fields = ('picture_id', 'url')    
+        fields = ('id', 'url')    
     
-
 
 class CauseSerializer(serializers.HyperlinkedModelSerializer):
      class Meta:
         model = Cause
-        fields = ('cause_id', 'title', 'description')
+        fields = ('id', 'title', 'description')
