@@ -4,6 +4,11 @@ from candidates.models import Candidate, Party, Role, Picture, Cause
 
 from candidates.models import Candidate, Party, GenderIdentity
 
+class CauseSerializer(serializers.HyperlinkedModelSerializer):
+     class Meta:
+        model = Cause
+        fields = ('id', 'title', 'description')
+
 class CandidateSerializer(serializers.ModelSerializer):
     causes = CauseSerializer(many=True)
 
@@ -29,13 +34,6 @@ class PartySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Party
         fields = ('id', 'name', 'number')
-
-
-class CauseSerializer(serializers.HyperlinkedModelSerializer):
-     class Meta:
-        model = Cause
-        fields = ('id', 'title', 'description')
-
 
 class GenderIdentitySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
