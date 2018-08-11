@@ -1,10 +1,6 @@
 from django.db import models
 
 
-class Picture(models.Model):
-    id = models.AutoField(primary_key=True)
-    url = models.TextField()
-
 class Candidate(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField()
@@ -49,3 +45,7 @@ class GenderIdentity(models.Model):
 class Ethnicity(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField()
+
+class Picture(models.Model):
+    id = models.AutoField(primary_key=True)
+    url = models.TextField()
