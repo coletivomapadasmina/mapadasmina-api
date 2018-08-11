@@ -1,4 +1,5 @@
 install:
+	pip install pipenv
 	pipenv --python python3.6
 	pipenv install --dev
 
