@@ -31,3 +31,7 @@ class Party(models.Model):
     id=models.IntegerField(primary_key=True)
     name=models.TextField()
     number=models.IntegerField()
+
+class GenderIdentity(models.Model):
+    id=models.AutoField(primary_key=True)
+    name=models.TextField()

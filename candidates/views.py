@@ -7,8 +7,8 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from rest_framework import viewsets
-from candidates.models import Candidate, Party
-from candidates.serializers import CandidateSerializer, PartySerializer
+from candidates.models import Candidate, Party, GenderIdentity
+from candidates.serializers import CandidateSerializer, PartySerializer, GenderIdentitySerializer
 
 
 class CandidateList(generics.ListCreateAPIView):
@@ -22,3 +22,8 @@ class CandidateDetail(generics.RetrieveUpdateDestroyAPIView):
 class PartyViewSet(viewsets.ModelViewSet):
     queryset = Party.objects.all()
     serializer_class = PartySerializer
+
+
+class GenderIdentityViewSet(viewsets.ModelViewSet):
+    queryset = GenderIdentity.objects.all()
+    serializer_class = GenderIdentitySerializer
