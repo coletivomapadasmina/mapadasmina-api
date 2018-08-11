@@ -9,7 +9,7 @@ class Candidate(models.Model):
     instagram=models.TextField()
     latitude=models.DecimalField(decimal_places=4,max_digits=10)
     longitude=models.DecimalField(decimal_places=4,max_digits=10)
-    facebookURL=models.URLField()
+    facebookUrl=models.URLField()
     campaignUrl=models.URLField()
     supportUrl=models.URLField()
     age=models.PositiveIntegerField()    
