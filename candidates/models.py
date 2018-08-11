@@ -18,6 +18,7 @@ class Candidate(models.Model):
     role=models.ForeignKey('Role', on_delete=models.CASCADE)
     party=models.ForeignKey('Party',on_delete=models.CASCADE)
     picture=models.ForeignKey('Picture',on_delete=models.CASCADE)
+    causes = models.ManyToManyField('Cause')
 
 
 class Role(models.Model):
