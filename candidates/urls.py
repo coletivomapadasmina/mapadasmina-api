@@ -17,6 +17,9 @@ from django.conf.urls import url
 from candidates import views
 
 urlpatterns = [
-    url(r'^candidates/$', views.candidate_list),
-    url(r'^candidates/(?P<pk>[0-9]+)/$', views.candidate_detail),
+    url(r'^candidates$', views.CandidateList.as_view()),
+    #url(r'^roles$', views.role_list),
+    #url(r'^pictures$', views.picture_list),
+    #url(r'^parties$', views.party_list),
+    url(r'^candidates/(?P<pk>[0-9]+)/$',  views.CandidateDetail.as_view()),
 ]
