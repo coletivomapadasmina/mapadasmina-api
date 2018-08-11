@@ -28,14 +28,15 @@ class Candidate(models.Model):
 
 class Role(models.Model):
     id=models.AutoField(primary_key=True)
+    name=models.TextField()
 
 
 class Picture(models.Model):
-    id=models.IntegerField(primary_key=True)
+    id=models.AutoField(primary_key=True)
     url=models.TextField()
 
 
 class Cause(models.Model):
-    id=models.IntegerField(primary_key=True)
+    id=models.AutoField(primary_key=True)
     title=models.TextField(unique=True)
     description=models.TextField()
