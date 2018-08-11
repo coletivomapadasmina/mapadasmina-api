@@ -18,3 +18,9 @@ class Candidate(models.Model):
 class Picture(models.Model)
     id=models.IntegerField(primary_key=True)
     url=models.TextField() """
+
+
+class Party(models.Model):
+    id=models.IntegerField(primary_key=True)
+    name=models.TextField()
+    number=models.IntegerField()

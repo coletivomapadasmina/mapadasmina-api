@@ -3,8 +3,10 @@ from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-from candidates.models import Candidate
-from candidates.serializers import CandidateSerializer
+from rest_framework import viewsets
+
+from candidates.models import Candidate, Party
+from candidates.serializers import CandidateSerializer, PartySerializer
 
 @csrf_exempt
 def candidate_list(request):
@@ -50,3 +52,7 @@ def candidate_detail(request, pk):
     elif request.method == 'DELETE':
         candidate.delete()
         return HttpResponse(status=204)
+
+class PartyViewSet(viewsets.ModelViewSet):
+    queryset = Party.objects.all()
+    serializer_class = PartySerializer
