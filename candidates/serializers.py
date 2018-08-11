@@ -10,14 +10,14 @@ class CandidateSerializer(serializers.ModelSerializer):
 class RoleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Role
-        fields = ('id', 'name')
+        fields = ('role_id', 'name')
 
 class PictureSerializer(serializers.ModelSerializer):
     class Meta:
         model = Picture
-        fields = ('id', 'url')    
+        fields = ('picture_id', 'url')    
     
 class PartySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Party
-        fields = ('id', 'name', 'number')
+        fields = ('party_id', 'name', 'number')
