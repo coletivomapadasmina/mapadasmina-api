@@ -30,11 +30,3 @@ class Role(models.Model):
 class Picture(models.Model):
     id=models.IntegerField(primary_key=True)
     url=models.TextField()
-
-<<<<<<< HEAD
-class Party(models.Model):
-    id=models.IntegerField(primary_key=True)
-    name=models.TextField()
-    number=models.IntegerField()
-=======
->>>>>>> 3cf9230f166e9ee0f1038d9773790b2e3488bd8d
