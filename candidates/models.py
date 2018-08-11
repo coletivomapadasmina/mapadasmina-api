@@ -1,5 +1,10 @@
 from django.db import models
 
+class Party(models.Model):
+    id=models.IntegerField(primary_key=True)
+    name=models.TextField()
+    number=models.IntegerField()
+
 class Candidate(models.Model):
     id=models.AutoField(primary_key=True)
     name=models.TextField()
@@ -13,9 +18,9 @@ class Candidate(models.Model):
     campaignUrl=models.URLField()
     supportUrl=models.URLField()
     age=models.PositiveIntegerField()
+    party=models.OneToOneField(Party, on_delete=models.SET_NULL, null=True)
     #role=models.ForeignKey('Role', on_delete=models.CASCADE)
     electedBefore=models.BooleanField(default=False)
-    #party=models.ForeignKey('Party',on_delete=models.CASCADE)
     #picture=models.ForeignKey('Picture',on_delete=models.CASCADE)
 
 class Role(models.Model):
@@ -26,8 +31,3 @@ class Picture(models.Model):
     id=models.IntegerField(primary_key=True)
     url=models.TextField()
 
-
-class Party(models.Model):
-    id=models.IntegerField(primary_key=True)
-    name=models.TextField()
-    number=models.IntegerField()
