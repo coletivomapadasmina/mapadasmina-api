@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from candidates.models import Candidate, Party, Role, Picture, Cause
 
+from candidates.models import Candidate, Party, GenderIdentity
 
 class CandidateSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,7 +20,7 @@ class RoleSerializer(serializers.ModelSerializer):
 class PictureSerializer(serializers.ModelSerializer):
     class Meta:
         model = Picture
-        fields = ('id', 'url')    
+        fields = ('id', 'url')
 
 
 class PartySerializer(serializers.HyperlinkedModelSerializer):
@@ -32,3 +33,9 @@ class CauseSerializer(serializers.HyperlinkedModelSerializer):
      class Meta:
         model = Cause
         fields = ('id', 'title', 'description')
+
+
+class GenderIdentitySerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = GenderIdentity
+        fields = ('id', 'name')
