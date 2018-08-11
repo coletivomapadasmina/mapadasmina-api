@@ -19,9 +19,11 @@ from rest_framework import routers
 from candidates import views
 
 router = routers.DefaultRouter()
+router.register(r'candidates', views.CandidateViewSet)
 router.register(r'parties', views.PartyViewSet)
+router.register(r'causes', views.CauseViewSet)
+
 
 urlpatterns = [
-    url(r'^', include(router.urls)),
-    url(r'^candidates/$', views.CandidateList.as_view()),
-    url(r'^candidates/(?P<pk>[0-9]+)/$', views.CandidateDetail.as_view()),]
+    url(r'^', include(router.urls))
+]
