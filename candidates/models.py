@@ -5,6 +5,9 @@ class Picture(models.Model):
     id = models.AutoField(primary_key=True)
     url = models.TextField()
 
+    def __str__(self):
+        return f"{self.url}"
+
 class Candidate(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField()
@@ -28,24 +31,42 @@ class Candidate(models.Model):
     party = models.ForeignKey('Party', on_delete=models.CASCADE)
     picture = models.OneToOneField(Picture, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"{self.electionName}"
+
 class Role(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField()
+
+    def __str__(self):
+        return f"{self.name}"
 
 class Party(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField()
     number = models.IntegerField()
 
+    def __str__(self):
+        return f"{self.name}"
+
 class Cause(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.TextField(unique=True)
     description = models.TextField()
 
+    def __str__(self):
+        return f"{self.title}"
+
 class GenderIdentity(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField()
 
+    def __str__(self):
+        return f"{self.name}"
+
 class Ethnicity(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField()
+
+    def __str__(self):
+        return f"{self.name}"
