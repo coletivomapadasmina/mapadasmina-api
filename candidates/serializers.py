@@ -12,8 +12,10 @@ class CandidateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Candidate
-        fields = ('name', 'slug','number', 'bio','instagram','latitude', 'longitude','facebookUrl',
-        'campaignUrl','supportUrl','age','electedBefore','role','party','picture', 'causes')
+        fields = ('id', 'name', 'electionName', 'slug', 'number', 'bio',
+        'instagram', 'latitude', 'longitude', 'facebookUrl', 'campaignUrl',
+        'supportUrl', 'age', 'electedBefore', 'previousRole', 'role',
+        'ethnicity', 'genderIdentity', 'causes', 'party', 'picture')
 
 
 class RoleSerializer(serializers.ModelSerializer):
