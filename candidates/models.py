@@ -22,7 +22,7 @@ class Candidate(models.Model):
     genderIdentity = models.ForeignKey('GenderIdentity', on_delete=models.CASCADE, null=True)
     causes = models.ManyToManyField('Cause')
     party = models.ForeignKey('Party', on_delete=models.CASCADE)
-    picture = models.OneToOneField(Picture, on_delete=models.CASCADE)
+    picture = models.OneToOneField('Picture', on_delete=models.CASCADE)
 
 class Role(models.Model):
     id = models.AutoField(primary_key=True)

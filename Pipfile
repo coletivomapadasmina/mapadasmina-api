@@ -16,5 +16,7 @@ django-rest-swagger = "*"
 python-decouple = "*"
 gunicorn = "*"
 whitenoise = "*"
+
 [dev-packages]
 pytest = "*"
+pytest-django = "*"
