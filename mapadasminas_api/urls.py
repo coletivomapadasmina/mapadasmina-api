@@ -15,6 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title="Mapa das minas API")
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +28,6 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     url(r'^', include('candidates.urls')),
+    url(r'docs', schema_view),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

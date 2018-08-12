@@ -1,25 +1,20 @@
 [[source]]
-
 url = 'https://pypi.python.org/simple'
 verify_ssl = true
 name = 'pypi'
 
-
 [requires]
-
 python_version = "3.6"
 
-
 [packages]
-
 django = "*"
 djangorestframework = "*"
 dj-database-url = "*"
 "psycopg2" = "*"
 django-cors-middleware = "*"
+django-rest-swagger = "*"
 python-decouple = "*"
 gunicorn = "*"
 
 [dev-packages]
-
 pytest = "*"
