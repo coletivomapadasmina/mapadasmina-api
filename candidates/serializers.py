@@ -4,8 +4,6 @@ from candidates.models import Candidate, Party, Role, Picture, Cause
 
 
 class CandidateSerializer(serializers.ModelSerializer):
-    causes = CauseSerializer(many=True)
-
     class Meta:
         model = Candidate
         fields = ('name', 'slug','number', 'bio','instagram','latitude', 'longitude','facebookUrl',
