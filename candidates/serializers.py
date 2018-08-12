@@ -7,17 +7,6 @@ class CauseSerializer(serializers.HyperlinkedModelSerializer):
         model = Cause
         fields = ('id', 'title', 'description')
 
-class CandidateSerializer(serializers.ModelSerializer):
-    causes = CauseSerializer(many=True)
-
-    class Meta:
-        model = Candidate
-        fields = ('id', 'name', 'electionName', 'slug', 'number', 'bio',
-        'instagram', 'latitude', 'longitude', 'facebookUrl', 'campaignUrl',
-        'supportUrl', 'age', 'electedBefore', 'previousRole', 'role',
-        'ethnicity', 'genderIdentity', 'causes', 'party', 'picture')
-
-
 class RoleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Role
@@ -44,3 +33,20 @@ class EthnicitySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Ethnicity
         fields = ('id', 'name')
+
+
+class CandidateSerializer(serializers.ModelSerializer):
+    causes = CauseSerializer(many=True)
+    previousRole = RoleSerializer()
+    role = RoleSerializer()
+    genderIdentity = GenderIdentitySerializer()
+    picture = PictureSerializer()
+    party = PartySerializer()
+    ethnicity = EthnicitySerializer()
+
+    class Meta:
+        model = Candidate
+        fields = ('id', 'name', 'electionName', 'slug', 'number', 'bio',
+        'instagram', 'latitude', 'longitude', 'facebookUrl', 'campaignUrl',
+        'supportUrl', 'age', 'electedBefore', 'previousRole', 'role',
+        'ethnicity', 'genderIdentity', 'causes', 'party', 'picture')
