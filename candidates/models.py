@@ -8,6 +8,10 @@ class Picture(models.Model):
     def __str__(self):
         return f"{self.url}"
 
+    class Meta:
+        verbose_name = 'Foto'
+        verbose_name_plural = 'Fotos'
+
 class Candidate(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField()
@@ -34,12 +38,20 @@ class Candidate(models.Model):
     def __str__(self):
         return f"{self.electionName}"
 
+    class Meta:
+        verbose_name = 'Candidata'
+        verbose_name_plural = 'Candidatas'
+
 class Role(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField()
 
     def __str__(self):
         return f"{self.name}"
+
+    class Meta:
+        verbose_name = 'Cargo'
+        verbose_name_plural = 'Cargos'
 
 class Party(models.Model):
     id = models.AutoField(primary_key=True)
@@ -49,6 +61,10 @@ class Party(models.Model):
     def __str__(self):
         return f"{self.name}"
 
+    class Meta:
+        verbose_name = 'Partido'
+        verbose_name_plural = 'Partidos'
+
 class Cause(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.TextField(unique=True)
@@ -56,6 +72,10 @@ class Cause(models.Model):
 
     def __str__(self):
         return f"{self.title}"
+    
+    class Meta:
+        verbose_name = 'Causa'
+        verbose_name_plural = 'Causas'
 
 class GenderIdentity(models.Model):
     id = models.AutoField(primary_key=True)
@@ -63,6 +83,10 @@ class GenderIdentity(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+    
+    class Meta:
+        verbose_name = 'Identidade de Gênero'
+        verbose_name_plural = 'Identidades de Gênero'
 
 class Ethnicity(models.Model):
     id = models.AutoField(primary_key=True)
@@ -70,3 +94,7 @@ class Ethnicity(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+    class Meta:
+        verbose_name = 'Etnia'
+        verbose_name_plural = 'Etnias'
