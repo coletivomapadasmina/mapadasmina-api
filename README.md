@@ -1,5 +1,9 @@
 #Mapa das minas - API
 
+Este é o repositório onde está a API utilizada pelo mapa das minas.
+
+Se você quer ve a documentação da API, com ela rodando vá na url `\docs`
+
 O jeito mais simples de rodar o projeto é utilizando o Docker,
 para isso tenha certeza de que está com ele instalado e atualizado.
 
