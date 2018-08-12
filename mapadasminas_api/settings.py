@@ -10,9 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 import os
-from os import getenv
 
+from decouple import config
 import dj_database_url
+
+
+def cast_list(variables):
+    return [s.strip() for s in variables.split(',')]
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,17 +26,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 's$8f86#l-ag_$3@5^=^elkk(*nd2%z)06m71dzu*ose=6^al3-'
+SECRET_KEY = config('SECRET_KEY', default='s$8f86#l-ag_$3@5^=^elkk(*nd2%z)06m71dzu*ose=6^al3-')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', cast=bool, default=True)
 
-ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0', 'localhost']
-
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=cast_list, default ='127.0.0.1,0.0.0.0,localhost')
 
 # CORS
-CORS_ORIGIN_ALLOW_ALL = True
-
+CORS_ORIGIN_ALLOW_ALL = config('CORS_ORIGIN_ALLOW_ALL', default=True, cast=bool)
+CORS_ORIGIN_WHITELIST = config('CORS_ORIGIN_WHITELIST', cast=cast_list, default='')
 
 # Application definition
 
@@ -84,8 +87,8 @@ WSGI_APPLICATION = 'mapadasminas_api.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.parse(getenv('DATABASE_URL')),
-    'test': dj_database_url.parse(getenv('TEST_DATABASE_URL'))
+    'default': dj_database_url.parse(config('DATABASE_URL', default='sqlite:///db.sqlite')),
+    'test': dj_database_url.parse(config('TEST_DATABASE_URL', default='sqlite://'))
 }
 
 

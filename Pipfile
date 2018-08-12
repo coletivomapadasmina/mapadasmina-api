@@ -17,7 +17,7 @@ djangorestframework = "*"
 dj-database-url = "*"
 "psycopg2" = "*"
 django-cors-middleware = "*"
-
+python-decouple = "*"
 
 [dev-packages]
 
