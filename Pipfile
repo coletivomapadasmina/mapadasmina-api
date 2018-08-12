@@ -18,6 +18,7 @@ dj-database-url = "*"
 "psycopg2" = "*"
 django-cors-middleware = "*"
 python-decouple = "*"
+gunicorn = "*"
 
 [dev-packages]
 
