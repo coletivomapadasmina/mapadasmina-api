@@ -87,8 +87,8 @@ WSGI_APPLICATION = 'mapadasminas_api.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.parse(config('DATABASE_URL')),
-    'test': dj_database_url.parse(config('TEST_DATABASE_URL'))
+    'default': dj_database_url.parse(config('DATABASE_URL', default='sqlite:///db.sqlite')),
+    'test': dj_database_url.parse(config('TEST_DATABASE_URL', default='sqlite://'))
 }
 
 
