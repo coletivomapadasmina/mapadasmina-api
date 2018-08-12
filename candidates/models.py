@@ -23,6 +23,7 @@ class Candidate(models.Model):
     party=models.ForeignKey('Party',on_delete=models.CASCADE)
     picture=models.OneToOneField(Picture, on_delete=models.CASCADE)
     causes = models.ManyToManyField('Cause')
+    ethnicity = models.ForeignKey('Ethnicity', on_delete=models.CASCADE, null=True)
 
 class Role(models.Model):
     id=models.AutoField(primary_key=True)
@@ -39,5 +40,9 @@ class Cause(models.Model):
     description=models.TextField()
 
 class GenderIdentity(models.Model):
+    id=models.AutoField(primary_key=True)
+    name=models.TextField()
+
+class Ethnicity(models.Model):
     id=models.AutoField(primary_key=True)
     name=models.TextField()

@@ -29,4 +29,5 @@ from django.conf.urls import url, include
 urlpatterns = [
     url(r'^', include('candidates.urls')),
     url(r'docs', schema_view),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

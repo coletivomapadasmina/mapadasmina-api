@@ -13,6 +13,7 @@ router.register(r'pictures', views.PictureViewSet)
 router.register(r'candidates', views.CandidateViewSet)
 router.register(r'causes', views.CauseViewSet)
 router.register(r'gender-identity', views.GenderIdentityViewSet)
+router.register(r'ethnicity', views.EthnicityViewSet)
 
 
 from django.contrib import admin
