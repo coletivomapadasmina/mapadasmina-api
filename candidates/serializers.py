@@ -1,3 +1,4 @@
+from expander import ExpanderSerializerMixin
 from rest_framework import serializers
 
 from candidates.models import Candidate, Party, Role, Picture, Cause, Ethnicity, GenderIdentity
@@ -35,18 +36,19 @@ class EthnicitySerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'name')
 
 
-class CandidateSerializer(serializers.ModelSerializer):
-    causes = CauseSerializer(many=True)
-    previousRole = RoleSerializer()
-    role = RoleSerializer()
-    genderIdentity = GenderIdentitySerializer()
-    picture = PictureSerializer()
-    party = PartySerializer()
-    ethnicity = EthnicitySerializer()
-
+class CandidateSerializer(ExpanderSerializerMixin, serializers.ModelSerializer):
     class Meta:
         model = Candidate
         fields = ('id', 'name', 'electionName', 'slug', 'number', 'bio',
         'instagram', 'latitude', 'longitude', 'facebookUrl', 'campaignUrl',
         'supportUrl', 'age', 'electedBefore', 'previousRole', 'role',
         'ethnicity', 'genderIdentity', 'causes', 'party', 'picture')
+        expandable_fields = {
+            'causes' : (CauseSerializer, (), {'many' : True}),
+            'previousRole' : (RoleSerializer, (), {}),
+            'role' : (RoleSerializer, (), {}),
+            'genderIdentity' : (GenderIdentitySerializer, (), {}),
+            'picture' : (PictureSerializer, (), {}),
+            'party' : (PartySerializer, (), {}),
+            'ethnicity' : (EthnicitySerializer, (), {}),
+        }
