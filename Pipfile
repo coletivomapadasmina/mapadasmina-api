@@ -18,3 +18,5 @@ gunicorn = "*"
 whitenoise = "*"
 [dev-packages]
 pytest = "*"
+yapf = "*"
+flake8 = "*"
