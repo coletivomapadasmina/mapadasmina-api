@@ -19,11 +19,20 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='candidate',
             name='picture',
-            field=models.OneToOneField(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='candidates.Picture'),
+            field=models.OneToOneField(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to='candidates.Picture'),
         ),
         migrations.AlterField(
             model_name='candidate',
             name='previousRole',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='previous_role', to='candidates.Role'),
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name='previous_role',
+                to='candidates.Role'),
         ),
     ]

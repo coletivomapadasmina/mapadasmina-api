@@ -12,31 +12,52 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterModelOptions(
             name='candidate',
-            options={'verbose_name': 'Candidata', 'verbose_name_plural': 'Candidatas'},
+            options={
+                'verbose_name': 'Candidata',
+                'verbose_name_plural': 'Candidatas'
+            },
         ),
         migrations.AlterModelOptions(
             name='cause',
-            options={'verbose_name': 'Causa', 'verbose_name_plural': 'Causas'},
+            options={
+                'verbose_name': 'Causa',
+                'verbose_name_plural': 'Causas'
+            },
         ),
         migrations.AlterModelOptions(
             name='ethnicity',
-            options={'verbose_name': 'Etnia', 'verbose_name_plural': 'Etnias'},
+            options={
+                'verbose_name': 'Etnia',
+                'verbose_name_plural': 'Etnias'
+            },
         ),
         migrations.AlterModelOptions(
             name='genderidentity',
-            options={'verbose_name': 'Identidade de Gênero', 'verbose_name_plural': 'Identidades de Gênero'},
+            options={
+                'verbose_name': 'Identidade de Gênero',
+                'verbose_name_plural': 'Identidades de Gênero'
+            },
         ),
         migrations.AlterModelOptions(
             name='party',
-            options={'verbose_name': 'Partido', 'verbose_name_plural': 'Partidos'},
+            options={
+                'verbose_name': 'Partido',
+                'verbose_name_plural': 'Partidos'
+            },
         ),
         migrations.AlterModelOptions(
             name='picture',
-            options={'verbose_name': 'Foto', 'verbose_name_plural': 'Fotos'},
+            options={
+                'verbose_name': 'Foto',
+                'verbose_name_plural': 'Fotos'
+            },
         ),
         migrations.AlterModelOptions(
             name='role',
-            options={'verbose_name': 'Cargo', 'verbose_name_plural': 'Cargos'},
+            options={
+                'verbose_name': 'Cargo',
+                'verbose_name_plural': 'Cargos'
+            },
         ),
         migrations.AlterField(
             model_name='candidate',

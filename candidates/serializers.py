@@ -2,10 +2,12 @@ from rest_framework import serializers
 
 from candidates.models import Candidate, Party, Role, Picture, Cause, Ethnicity, GenderIdentity
 
+
 class CauseSerializer(serializers.HyperlinkedModelSerializer):
-     class Meta:
+    class Meta:
         model = Cause
         fields = ('id', 'title', 'description')
+
 
 class RoleSerializer(serializers.ModelSerializer):
     class Meta:
@@ -24,10 +26,12 @@ class PartySerializer(serializers.HyperlinkedModelSerializer):
         model = Party
         fields = ('id', 'name', 'number')
 
+
 class GenderIdentitySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = GenderIdentity
         fields = ('id', 'name')
+
 
 class EthnicitySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -47,6 +51,7 @@ class CandidateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Candidate
         fields = ('id', 'name', 'electionName', 'slug', 'number', 'bio',
-        'instagram', 'latitude', 'longitude', 'facebookUrl', 'campaignUrl',
-        'supportUrl', 'age', 'electedBefore', 'previousRole', 'role',
-        'ethnicity', 'genderIdentity', 'causes', 'party', 'picture')
+                  'instagram', 'latitude', 'longitude', 'facebookUrl',
+                  'campaignUrl', 'supportUrl', 'age', 'electedBefore',
+                  'previousRole', 'role', 'ethnicity', 'genderIdentity',
+                  'causes', 'party', 'picture')

@@ -20,11 +20,18 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='candidate',
             name='genderIdentity',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='candidates.GenderIdentity'),
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to='candidates.GenderIdentity'),
         ),
         migrations.AddField(
             model_name='candidate',
             name='previousRole',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='previous_role', to='candidates.Role'),
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name='previous_role',
+                to='candidates.Role'),
         ),
     ]

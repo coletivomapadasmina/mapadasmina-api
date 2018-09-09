@@ -21,6 +21,9 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='candidate',
             name='ethnicity',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='candidates.Ethnicity'),
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to='candidates.Ethnicity'),
         ),
     ]

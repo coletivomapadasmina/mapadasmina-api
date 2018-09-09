@@ -8,8 +8,7 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
@@ -21,8 +20,10 @@ class Migration(migrations.Migration):
                 ('number', models.PositiveIntegerField()),
                 ('bio', models.TextField()),
                 ('instagram', models.TextField()),
-                ('latitude', models.DecimalField(decimal_places=4, max_digits=10)),
-                ('longitude', models.DecimalField(decimal_places=4, max_digits=10)),
+                ('latitude',
+                 models.DecimalField(decimal_places=4, max_digits=10)),
+                ('longitude',
+                 models.DecimalField(decimal_places=4, max_digits=10)),
                 ('facebookUrl', models.URLField()),
                 ('campaignUrl', models.URLField()),
                 ('supportUrl', models.URLField()),
@@ -55,16 +56,22 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='candidate',
             name='party',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='candidates.Party'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                to='candidates.Party'),
         ),
         migrations.AddField(
             model_name='candidate',
             name='picture',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='candidates.Picture'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                to='candidates.Picture'),
         ),
         migrations.AddField(
             model_name='candidate',
             name='role',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='candidates.Role'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                to='candidates.Role'),
         ),
     ]

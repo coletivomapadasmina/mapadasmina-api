@@ -1,6 +1,9 @@
 from rest_framework import viewsets
-from candidates.models import Candidate, Party, GenderIdentity, Role, Picture, Cause, Ethnicity
-from candidates.serializers import CandidateSerializer, PartySerializer, RoleSerializer, PictureSerializer, CauseSerializer, GenderIdentitySerializer, EthnicitySerializer
+from candidates.models import (Candidate, Party, GenderIdentity, Role, Picture,
+                               Cause, Ethnicity)
+from candidates.serializers import (
+    CandidateSerializer, PartySerializer, RoleSerializer, PictureSerializer,
+    CauseSerializer, GenderIdentitySerializer, EthnicitySerializer)
 
 
 class CandidateViewSet(viewsets.ModelViewSet):
@@ -31,6 +34,7 @@ class CauseViewSet(viewsets.ModelViewSet):
 class GenderIdentityViewSet(viewsets.ModelViewSet):
     queryset = GenderIdentity.objects.all()
     serializer_class = GenderIdentitySerializer
+
 
 class EthnicityViewSet(viewsets.ModelViewSet):
     queryset = Ethnicity.objects.all()
